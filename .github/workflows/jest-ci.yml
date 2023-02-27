@@ -1,9 +1,6 @@
-name: ci
+name: jest-ci
 
-on:
-  push:
-    branches:
-      - 'main'
+on: push
 
 jobs:
   test-front:
@@ -37,4 +34,3 @@ jobs:
           push: true
           context: "{{defaultContext}}:server"
           tags: user/quete1902:latest
-          
