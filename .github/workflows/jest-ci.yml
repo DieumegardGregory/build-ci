@@ -1,7 +1,6 @@
 name: jest-ci
 
 on: push
-  branches: [ '*' ]
 
 jobs:
   test-front:
@@ -9,15 +8,6 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-
-      - name: Use Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-
-      - name: Install dependencies
-        run: yarn --immutable
-        
       - name: Goto client and run tests
         run: cd client && npm i && npm test
   docker:
